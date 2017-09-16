@@ -1,0 +1,44 @@
+
+  <div class="mt-panel clearfix generator-panel">
+    <h1 class="mt-panel__heading">Generer workout</h1>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal">
+      <div class="form-group">
+        <label class="col-xs-4">
+          Cardio/Styrke
+        </label>
+        <div class="col-xs-4">
+          <input [(ngModel)]="diff" class="diff-range swiper-no-swiping" type="range" name="diff" min="1" max="5" step="0.001" />
+        </div>
+        <div class="col-xs-4">
+          <diff-icon [diff]="diff"></diff-icon>
+          <!--?php ViewHelper::renderPartial('appViews/_diff-icon', ['size' =>'sm', 'diff' => $diff ] ); ?-->
+          <!--span id="diff-value" class="diff hidden"><?php echo "(" . (6 - $diff) . "/". $diff ." )"; ?></span-->
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-4" for="input-focus">Fokus</label>
+        <div class="col-sm-4">
+          <select name="focus" [(ngModel)]="selectedFocus" class="form-control swiper-no-swiping">
+            <option *ngFor="let focusArea of this.focusAreas" value="{{focusArea.key}}">
+              {{focusArea.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">          
+        <label class="col-xs-4" for="time">Tid</label>
+        <div class="col-sm-4">
+          <select name="time" [ngModel]="defaultTime" class="form-control swiper-no-swiping" >
+            <option value="all" ng-selected>Alle</option>
+            <option value="short" >Under 15 min</option>
+            <option value="long" >Over 15 min</option>
+          </select>
+        </div>
+      </div>
+      <input [ngModel]=workout.id *ngIf="workout" name='id' type='hidden' />
+      <div *ngIf="warning" class="alert alert-warning">
+        Generatoren kunne desværre ikke generere en workout ud fra de valgte parametre. Prøv evt at justere indstillingerne.
+      </div>
+      <button class="btn btn-lg btn-success pull-right" type="submit" >Generer Workout</button>
+    </form>
+  </div>

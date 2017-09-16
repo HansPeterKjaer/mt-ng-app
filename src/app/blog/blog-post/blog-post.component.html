@@ -1,0 +1,5 @@
+<div *ngIf="post" class="blog-post">
+	<img *ngIf="post.featuredImage" src="{{post.featuredImage}}" class="pull-left teaser-image" />
+	<h1 [innerHTML]="post.title"></h1>
+	<div [innerHTML]="post.content"></div>
+</div>

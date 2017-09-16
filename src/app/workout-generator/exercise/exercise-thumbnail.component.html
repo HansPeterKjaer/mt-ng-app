@@ -1,0 +1,13 @@
+<div *ngIf="exercise" class="exercise exercise--thumbnail" attr.data-index="{{exercise.id}}" attr.data-name="{{exercise.name}">
+  <h1 class="margin-sm mt-panel__heading">Øvelse <span class="index">{{exercise.id}}</span>: <span class="name">{{exercise.name}}</span></h1>
+  <div class="exercise__imageviewer imageviewer">
+    <div class="imageviewer__images">
+        <img *ngIf="exercise?.images.length > 0" class="imageviewer__image current" src="/mtassets/exercise-images/{{exercise.images[0].name}}" />
+    </div>
+  </div>
+  <div class="exercise__textwrapper">
+    <h1 class="margin-sm">{{exercise.name}}</h1>
+    <p>{{exercise.focus}} / {{exercise.diff}}</p>
+    <div class="exercise__description">{{exercise.description}}</div>
+  </div >
+</div>

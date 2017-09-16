@@ -1,0 +1,46 @@
+.aside-menu{
+	color: @text-black;
+	margin: 0 -15px;
+
+	a {
+		color: inherit;
+	}
+
+	ul{
+		list-style: none;
+	}
+
+	ul.firstlevel {
+
+	}
+	ul.secondlevel {
+		a {
+			padding-left: 30px;
+		}
+	}
+	.expand-btn {
+    	position: absolute;
+    	top: 0;
+    	margin-top: 7px;
+    	right: 0;
+    	
+    	&:before {
+    		content: "+";
+		}
+	}
+
+	.menu-item {
+		> ul {
+			display: none;
+		}
+	}
+	.menu-item--toggled{
+		> ul {
+			display: block;
+		}
+		
+		.expand-btn:before {
+    		content: "-";
+		}
+	}	
+}

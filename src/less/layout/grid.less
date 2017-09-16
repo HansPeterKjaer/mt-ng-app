@@ -1,0 +1,49 @@
+html,
+body {
+	height: 100%;
+	margin: 0px;
+}
+
+body {
+	padding-top: 36px;
+	@media (min-width: @screen-sm){
+		padding-top: 50px;
+	}
+}
+
+.main-content {
+	height: 100%;
+	width: 100%;
+}
+
+.swiper-container-horizontal >.swiper-wrapper > .swiper-slide{
+	border-right: 1px solid #ccc;
+}
+
+.swiper-container {
+		height: 100%;
+}
+
+.swiper-slide {
+	// width: 50% !important;
+}
+
+.swiper-slide--h {
+	//@media (min-width: @screen-lg){
+		overflow: auto;
+	//}
+}
+
+.swiper-slide--v{
+	@media (min-width: @screen-lg){
+		overflow: auto;
+	}	
+}
+
+.clear {
+	clear: both;
+}
+
+.clear-left {
+	clear: left;
+}

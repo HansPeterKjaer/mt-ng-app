@@ -1,0 +1,84 @@
+/* Bootstrap */
+.small-gutters {
+	&.row{
+		margin: 0 -5px;
+	}
+	> [class^="col-"]{
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+}
+.medium-gutters{
+	&.row{
+		margin: 0 -10px;
+	}
+	> [class^="col-"]{
+		padding-right: 10px;
+		padding-left: 10px;
+	}	
+}
+.no-gutters {
+	&.row {
+		margin: 0px -15px;	
+	}
+	> [class^="col-"] {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+}
+
+.btn-xxl {
+	padding: 20px 32px;
+	font-size: 36px;
+	line-height: 1.3333333;
+	border-radius: 6px;
+	margin-bottom: 20px;
+}
+
+.row.is-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row.is-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+* And with max cross-browser enabled.
+* Nobody should ever write this by hand. 
+* Use a preprocesser with autoprefixing.
+*/
+.row.is-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row.is-flex > [class*='col-'] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+
+
+
+
+// used??
+.col-6-centered {
+	margin-right: 25%; 
+	margin-left: 25%;
+}
+
+

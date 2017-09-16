@@ -1,0 +1,33 @@
+.mt-topnav {
+	float: left;
+	> ul{
+		float: left;
+		margin: 0;
+
+		> li {
+			float: left;
+
+			.mt-topnav__link {
+				line-height: 36px;
+				padding: 0px 15px;
+				border-left: 1px solid @grey;
+
+				@media (min-width: @screen-sm){
+					line-height: 50px;
+				}
+			} 
+			&:last-child{
+				.mt-topnav__link{
+					border-right: 1px solid @grey;
+				}
+			}
+			
+			.mt-topnav__link:hover, 
+			.mt-topnav__link:focus,
+			& .active > .mt-topnav__link {
+				//color: #ffffff;
+				//background-color: #080808;
+			}
+		}
+	}	
+}

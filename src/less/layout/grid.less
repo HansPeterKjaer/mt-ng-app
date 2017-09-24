@@ -13,7 +13,7 @@ body {
 }
 
 .flex-wrap {
-	height: 100vh;
+	height: 100%;
   	display: flex;
 }
 
@@ -21,6 +21,12 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.flex-columns {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
 }
 
 .flex-content {
@@ -32,4 +38,10 @@ body {
 app-root {
 	display: flex;
 	width:100%;
+}
+generator-form,
+exercise,
+workout {
+    display: flex;
+    height: 100%;
 }

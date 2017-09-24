@@ -1,22 +1,22 @@
 
-  <div class="mt-panel clearfix generator-panel">
+  <div class="mt-panel-item clearfix generator-panel">
     <h1 class="sr-only mt-panel__heading">Generer workout</h1>
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal">
-      <div class="form-group">
-        <label class="col-xs-4">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="">
+      <div class="form-group row">
+        <label class="col-4 col-form-label">
           Cardio/Styrke
         </label>
-        <div class="col-xs-4">
+        <div class="col-4">
           <input [(ngModel)]="diff" class="diff-range swiper-no-swiping" type="range" name="diff" min="1" max="5" step="0.001" />
         </div>
-        <div class="col-xs-4">
+        <div class="col-4">
           <diff-icon [diff]="diff"></diff-icon>
           <!--?php ViewHelper::renderPartial('appViews/_diff-icon', ['size' =>'sm', 'diff' => $diff ] ); ?-->
           <!--span id="diff-value" class="diff hidden"><?php echo "(" . (6 - $diff) . "/". $diff ." )"; ?></span-->
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-xs-4" for="input-focus">Primært fokus</label>
+      <div class="form-group row">
+        <label class="col-4 col-form-label" for="input-focus">Primært fokus</label>
         <div class="col-sm-4">
           <select name="focus" [(ngModel)]="selectedFocus" class="form-control swiper-no-swiping">
             <option *ngFor="let focusArea of this.focusAreas" value="{{focusArea.key}}">
@@ -25,8 +25,8 @@
           </select>
         </div>
       </div>
-      <div class="form-group">          
-        <label class="col-xs-4" for="time">Tid</label>
+      <div class="form-group row">          
+        <label class="col-4 col-form-label" for="time">Tid</label>
         <div class="col-sm-4">
           <select name="time" [ngModel]="defaultTime" class="form-control swiper-no-swiping" >
             <option value="all" ng-selected>Alle</option>
@@ -39,6 +39,6 @@
       <div *ngIf="warning" class="alert alert-warning">
         Generatoren kunne desværre ikke generere en workout ud fra de valgte parametre. Prøv evt at justere indstillingerne.
       </div>
-      <button class="btn btn-lg btn-success pull-right" type="submit" >Generer Workout</button>
+      <button class="btn btn-success float-right" type="submit" >Generer Workout</button>
     </form>
   </div>

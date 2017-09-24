@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Exercise } from 'app/models/exercise';
-import { StateService } from '../state.service';
+import { StateService } from 'app/workout-generator/state.service';;
 
 @Component({
 	selector: 'exercise',

@@ -1,0 +1,16 @@
+{
+  "/api": {
+    "target": "http://localhost/mt/",
+    "secure": false,
+    "pathRewrite": {"^/api" : ""}
+  },
+  "/mtassets": {
+  	"target": "http://localhost/",
+    "secure": false
+  },
+  "/wpblog/wp-json": {
+  	"target": "http://localhost/mt/mtBlog/",
+  	"secure": false,
+    "pathRewrite": {"^/wpblog" : ""}
+  } 
+}

@@ -13,6 +13,10 @@ const workoutGeneratorRoutes: Routes = [
   {
     path: 'generator',
     component: WorkoutGeneratorComponent,
+  },
+  {
+    path: '',
+    component: WorkoutGeneratorComponent,
   }
 ];
 

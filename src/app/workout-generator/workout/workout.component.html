@@ -4,8 +4,8 @@
 		<div class="swiper-slide swiper-slide--v mt-panel clearfix workout-panel">
 			<div class="row medium-gutters">
 				<div class="col-xs-12" >
-					<h1 class="margin-sm mt-panel__heading">Din Workout <span class="hidden">{{workout.name}}</span></h1>
-					<h2 class="margin-sm">Forløb: {{workout.protocol.name}}</h2>
+					<h1 class="sr-only">Din Workout <span class="hidden">{{workout.name}}</span></h1>
+					<h2 class="margin-sm">Program: {{workout.protocol.name}}</h2>
 					<div [innerHTML]="workout.protocol.descr" ></div>        
 					<h2 class="margin-sm">Øvelser:</h2>
 					<div class="workout__exercises">

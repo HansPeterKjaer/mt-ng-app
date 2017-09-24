@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+import Swiper from 'swiper';
 
 
 //import { Workout } from './Workout';
@@ -25,7 +26,6 @@ export class WorkoutGeneratorComponent implements OnInit {
 
 	ngOnInit() {
 		if(window.innerWidth < 1200){
-			var Swiper = require('swiper');
 			this.swiper = new Swiper ('.swiper-container-h', {
 				direction: 'horizontal',
 				loop: false,

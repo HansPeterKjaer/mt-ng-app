@@ -1,6 +1,6 @@
 
   <div class="mt-panel clearfix generator-panel">
-    <h1 class="mt-panel__heading">Generer workout</h1>
+    <h1 class="sr-only mt-panel__heading">Generer workout</h1>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal">
       <div class="form-group">
         <label class="col-xs-4">
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-xs-4" for="input-focus">Fokus</label>
+        <label class="col-xs-4" for="input-focus">Primært fokus</label>
         <div class="col-sm-4">
           <select name="focus" [(ngModel)]="selectedFocus" class="form-control swiper-no-swiping">
             <option *ngFor="let focusArea of this.focusAreas" value="{{focusArea.key}}">

@@ -5,12 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { WorkoutGeneratorComponent } from './workout-generator/workout-generator.component';
-//import { BlogComponent } from './blog/blog.component';
 import { WorkoutGeneratorModule } from './workout-generator/workout-generator.module';
 import { BlogModule } from './blog/blog.module';
-
-
 
 @NgModule({
   declarations: [

@@ -55,7 +55,7 @@ export class WorkoutGeneratorService {
 			.toPromise()
 			.then((response) => {
 			 	let d = response.json(); 
-			 	console.log(d); 
+
 				if (d.success){
 			 		return this.mapJsonToWorkout(d.data);
 			 	}

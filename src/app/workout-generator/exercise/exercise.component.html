@@ -1,44 +1,45 @@
 
 <div *ngIf="exercise" class="flex-main mt-panel-item"> 
-	<div class="row flex-content exercise">
-		<div class="exercise" attr.data-index="{{exercise.id}}" attr.data-name="{{exercise.name}">
-			<div class="exercise__imageviewer imageviewer">
-				<div class="imageviewer__images">
-						<img 
-							*ngFor="let img of exercise.images; let index=index;" 
-							[ngClass]="{current: (index == currentIndex)}"
-							class="imageviewer__image" src="/mtassets/exercise-images/{{img.name}}" />
-				</div>
+	<div class="row flex-content">
+		<div class="col-12" >
+			<div class="exercise" attr.data-index="{{exercise.id}}" attr.data-name="{{exercise.name}">
+				<div class="exercise__imageviewer imageviewer">
+					<div class="imageviewer__images">
+							<img 
+								*ngFor="let img of exercise.images; let index=index;" 
+								[ngClass]="{current: (index == currentIndex)}"
+								class="imageviewer__image" src="/mtassets/exercise-images/{{img.name}}" />
+					</div>
 
-				<div class="imageviewer__controls">
-					<button (click)="play()" class="imageviewer__btn btn-play btn">
-						<img src="assets/play-btn.svg">
-						<span class="sr-only">afspil øvelse</span>
-					</button>
-					<button (click)="pause()" class="imageviewer__btn btn-pause btn">
-						<img src="assets/pause-btn.svg">
-						<span class="sr-only">pause afspilning</span>
-					</button>
-					<button (click)="stop()" class="imageviewer__btn btn-stop btn">
-						<img src="assets/stop-btn.svg">
-						<span class="sr-only">stop afspilning</span>
-					</button>
-					<button (click)="prev()" class="imageviewer__btn btn-prev btn">
-						<img src="assets/prev-btn.svg">
-						<span class="sr-only">forrige billede</span>
-					</button>
-					<button (click)="next()" class="imageviewer__btn btn-next btn">
-						<img src="assets/next-btn.svg">
-						<span class="sr-only">næste billede</span>
-					</button>  
+					<div class="imageviewer__controls">
+						<button (click)="play()" class="imageviewer__btn btn-play btn">
+							<img src="assets/play-btn.svg">
+							<span class="sr-only">afspil øvelse</span>
+						</button>
+						<button (click)="pause()" class="imageviewer__btn btn-pause btn">
+							<img src="assets/pause-btn.svg">
+							<span class="sr-only">pause afspilning</span>
+						</button>
+						<button (click)="stop()" class="imageviewer__btn btn-stop btn">
+							<img src="assets/stop-btn.svg">
+							<span class="sr-only">stop afspilning</span>
+						</button>
+						<button (click)="prev()" class="imageviewer__btn btn-prev btn">
+							<img src="assets/prev-btn.svg">
+							<span class="sr-only">forrige billede</span>
+						</button>
+						<button (click)="next()" class="imageviewer__btn btn-next btn">
+							<img src="assets/next-btn.svg">
+							<span class="sr-only">næste billede</span>
+						</button>  
+					</div>
 				</div>
+				<div class="exercise__textwrapper">
+					<h1 class="margin-sm">{{exercise.name}}</h1>
+					<p>{{exercise.focus}} / {{exercise.diff}}</p>
+					<div class="exercise__description" [innerHTML]="exercise.description"></div>
+				</div >
 			</div>
-			<div class="exercise__textwrapper">
-				<h1 class="margin-sm">{{exercise.name}}</h1>
-				<p>{{exercise.focus}} / {{exercise.diff}}</p>
-				<div class="exercise__description" [innerHTML]="exercise.description"></div>
-			</div >
 		</div>
 	</div>
-	<div class="swiper-scrollbar swiper-scrollbar-v3"></div>
 </div>

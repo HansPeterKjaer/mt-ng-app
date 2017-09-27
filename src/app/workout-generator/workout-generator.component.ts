@@ -15,17 +15,40 @@ import { StateService } from './state.service';
 })
 export class WorkoutGeneratorComponent implements OnInit {
 	swiper = null;
+	prevIndex: number = 0;
+	currentIndex: number = 0;
+	menuItems = null;
+	exercise = null;
+	workout = null;
 
 	constructor( private stateService: StateService, private route: ActivatedRoute, private router: Router) { 
-		console.log("generator init");
+		stateService.exercise$.subscribe(ex => this.exercise = ex);
+		stateService.workout$.subscribe(wo => this.workout = wo);
+		this.menuItems = [
+			{name: 'Generator', selected: true, class: 'current next' },
+			{name: 'Workout', selected: false, class: '' },
+			{name: 'Exercise', selected: false, class: '' }
+		];
 	}
 
 	swiperUpdate(){
 		this.swiper && this.swiper.update(true);
 	}
 
+	mtPanelMenuItemClick(event, index) {
+		if (index == this.prevIndex) return;
+
+		this.menuItems[this.prevIndex].selected = false;
+		this.menuItems[this.prevIndex].class = '';
+		this.menuItems[index].selected = true;
+		this.menuItems[index].class = `current ${(this.prevIndex > index) ? 'next' : 'prev'}` ;
+		this.prevIndex = index; 
+		console.log(this.menuItems[index]);
+
+  	}
+
 	ngOnInit() {
-		if(window.innerWidth < 1200){
+		/*if(window.innerWidth < 1200){
 			this.swiper = new Swiper ('.swiper-container-h', {
 				direction: 'horizontal',
 				loop: false,
@@ -38,8 +61,6 @@ export class WorkoutGeneratorComponent implements OnInit {
 			    prevButton: '.swiper-nav-button--prev',
 			    buttonDisabledClass: 'swiper-nav-button--disabled',
 			    grabCursor: true
-	  		});
-		}   
+	  		});*/  
 	}
-
 }

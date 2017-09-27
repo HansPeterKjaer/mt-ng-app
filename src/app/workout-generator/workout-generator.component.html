@@ -1,24 +1,27 @@
 <div class="mt-panel-menu">
 	<div class="row">
-		<div class="mt-panel-menu-item col-4">generator
+		<div class="mt-panel-menu-item col-4" [ngClass] = "menuItems[0].class">
+			<a (click)="mtPanelMenuItemClick($event,0)">Generator</a>
 		</div>
-		<div class="mt-panel-menu-item col-4">workout
+		<div class="mt-panel-menu-item col-4" [hidden]="!workout" [ngClass] = "menuItems[1].class">
+			<a (click)="mtPanelMenuItemClick($event,1)">Workout</a>
 		</div>
-		<div class="mt-panel-menu-item col-4">exercise
+		<div class="mt-panel-menu-item col-4" [hidden]="!exercise" [ngClass] = "menuItems[2].class">
+			<a (click)="mtPanelMenuItemClick($event,2)">Exercise</a>
 		</div>
 	</div>
-	<div class="panelmenu-border">
+	<div class="mt-panel-menu-border">
 	</div>
 </div>
-<div class="container-fluid" style="height:100%; padding-top: 25px;">
-	<div class="row no-gutters" style="flex-grow:1; height:100%">
-		<div class="col-12 col-sm-6 col-lg-4" >
+<div class="container-fluid" style="height:100%; padding: 25px 0 0 0; margin:0px">
+	<div class="row no-gutters" style="flex-grow:1; height:100%; width:150%">
+		<div class="col-12 col-sm-4 col-lg-4" [ngClass] = "menuItems[0].class">
 			<generator-form></generator-form>
 		</div>
-		<div class="col-12 col-sm-6 col-lg-4" >
+		<div class="col-12 col-sm-4 col-lg-4" [hidden]="!workout" [ngClass] = "menuItems[1].class">
 			<workout></workout>
 		</div>
-		<div class="col-12 col-sm-6 col-lg-4" >
+		<div class="col-12 col-sm-4 col-lg-4" [hidden]="!exercise" [ngClass] = "menuItems[2].class">
 			<exercise></exercise>				
 		</div>
 	</div>

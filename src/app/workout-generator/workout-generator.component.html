@@ -13,19 +13,16 @@
 	<div class="mt-panel-menu-border">
 	</div>
 </div>
-<div class="container-fluid" style="height:100%; padding: 25px 0 0 0; margin:0px">
-	<div class="row no-gutters" style="flex-grow:1; height:100%; width:150%">
-		<div class="col-12 col-sm-4 col-lg-4" [ngClass] = "menuItems[0].class">
+<div class="mt-panel-wrapper container-fluid" style="">
+	<div class="row mt-panel-slide-wrapper no-gutters" style="">
+		<div class="col-4" [ngClass] = "menuItems[0].class">
 			<generator-form></generator-form>
 		</div>
-		<div class="col-12 col-sm-4 col-lg-4" [hidden]="!workout" [ngClass] = "menuItems[1].class">
+		<div class="col-4" [hidden]="!workout" [ngClass] = "menuItems[1].class">
 			<workout></workout>
 		</div>
-		<div class="col-12 col-sm-4 col-lg-4" [hidden]="!exercise" [ngClass] = "menuItems[2].class">
+		<div class="col-4" [hidden]="!exercise" [ngClass] = "menuItems[2].class">
 			<exercise></exercise>				
 		</div>
 	</div>
-	<!--div class="swiper-nav-button swiper-nav-button--next"></div>
-    <div class="swiper-nav-button swiper-nav-button--prev"></div>
-	<div class="swiper-scrollbar swiper-scrollbar-h"></div-->
 </div>

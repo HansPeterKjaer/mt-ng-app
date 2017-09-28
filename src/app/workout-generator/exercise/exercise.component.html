@@ -2,6 +2,7 @@
 <div *ngIf="exercise" class="flex-main mt-panel-item"> 
 	<div class="row flex-content">
 		<div class="col-12" >
+			<h1 class="margin-sm">Øvelse: {{exercise.name}}</h1>
 			<div class="exercise" attr.data-index="{{exercise.id}}" attr.data-name="{{exercise.name}">
 				<div class="exercise__imageviewer imageviewer">
 					<div class="imageviewer__images">
@@ -35,7 +36,6 @@
 					</div>
 				</div>
 				<div class="exercise__textwrapper">
-					<h1 class="margin-sm">{{exercise.name}}</h1>
 					<p>{{exercise.focus}} / {{exercise.diff}}</p>
 					<div class="exercise__description" [innerHTML]="exercise.description"></div>
 				</div >

@@ -1,39 +1,25 @@
-
 // bootstrap overrides:
 @link-color:            #111;
 @link-hover-color:		#111;
+
+@text-white: #fff;
+@text-black: rgb(51, 51, 51);
+
 
 @grey: #ddd;
 @grey-light: #e5e5e5;
 @grey-dark: #999;
 
-@text-white: #fff;
-@text-black: rgb(51, 51, 51);
+@gray-base:              #000;
+@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-dark:              lighten(@gray-base, 20%);   // #333
+@gray:                   lighten(@gray-base, 33.5%); // #555
+@gray-light:             lighten(@gray-base, 46.7%); // #777
+@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-/*
-@c1: #e0e0e0;
-@c2: #e5e5e5;
-@c3: #eaeaea;
+@brand-primary:         darken(#428bca, 6.5%);
+@brand-success:         #5cb85c;
+@brand-info:            #5bc0de;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
 
-
-.c1{
-	background-color: @c1;
-}
-.c2{
-	background-color: @c2;
-}
-.c3{
-	background-color: @c3;
-}*/
-
-.bg{
-	&--dark{
-		background-color: #eeeeee;
-	}
-	&--medium{
-		background-color: #f5f5f5;
-	}
-	&--light{
-		background-color: #f9f9f9;
-	}
-}

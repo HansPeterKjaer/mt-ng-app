@@ -10,12 +10,21 @@ import { GeneratorFormComponent } from './generator-form/generator-form.componen
 import { WorkoutGeneratorService } from 'app/shared/workout-generator.service';
 import { StateService } from './state.service';
 import { StrengthCardioIconComponent } from 'app/shared/strength-cardio-icon.component';
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
+const SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto',
+  keyboardControl: true
+};
 
 @NgModule({
   imports: [
     CommonModule,
     WorkoutGeneratorRoutingModule,
-    FormsModule
+    FormsModule,
+    SwiperModule.forRoot(SWIPER_CONFIG)
   ],
   declarations: [
   	WorkoutGeneratorComponent, 

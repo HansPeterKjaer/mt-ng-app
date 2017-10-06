@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
-import Swiper from 'swiper';
+import { DragScrollModule } from 'angular2-drag-scroll';
 
-
-//import { Workout } from './Workout';
-//import { Exercise } from './Exercise';
 import { StateService } from './state.service';
 
 @Component({
@@ -31,10 +28,6 @@ export class WorkoutGeneratorComponent implements OnInit {
 		];
 	}
 
-	swiperUpdate(){
-		this.swiper && this.swiper.update(true);
-	}
-
 	mtPanelMenuItemClick(event, index) {
 		if (index == this.prevIndex) return;
 
@@ -48,19 +41,5 @@ export class WorkoutGeneratorComponent implements OnInit {
   	}
 
 	ngOnInit() {
-		/*if(window.innerWidth < 1200){
-			this.swiper = new Swiper ('.swiper-container-h', {
-				direction: 'horizontal',
-				loop: false,
-			    scrollbar: '.swiper-scrollbar-h',
-			    scrollbarHide: false,
-			    scrollbarDraggable: true,
-			    scrollbarSnapOnRelease: true,
-			    slidesPerView: 'auto',
-			    nextButton: '.swiper-nav-button--next',
-			    prevButton: '.swiper-nav-button--prev',
-			    buttonDisabledClass: 'swiper-nav-button--disabled',
-			    grabCursor: true
-	  		});*/  
 	}
 }

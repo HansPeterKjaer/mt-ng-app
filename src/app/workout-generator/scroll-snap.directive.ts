@@ -26,6 +26,7 @@ export class ScrollSnapDirective {
 
     @HostListener('scroll', ['$event'])
     handleScrollEvent(e:Event) {
-        console.log(e)       
+        console.log(e)
+        
     }
 }

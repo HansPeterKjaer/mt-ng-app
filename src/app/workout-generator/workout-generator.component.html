@@ -1,4 +1,4 @@
-<div class="mt-panel-menu">
+<div class="mt-panel-menu" style="z-index: 9999">
 	<div class="row">
 		<div class="mt-panel-menu-item col-4" [ngClass] = "menuItems[0].class">
 			<a (click)="mtPanelMenuItemClick($event,0)">Generator</a>
@@ -13,7 +13,7 @@
 	<div class="mt-panel-menu-border">
 	</div>
 </div>
-<div class="mt-panel-wrapper container-fluid swiper-container" swiper style="height: 100%;">
+<div #swiperWrapper class="mt-panel-wrapper container-fluid swiper-container" [(index)]="swiperIndex" swiper style="height: 100%;">
 	<div class="row mt-panel-slide-wrapper swiper-wrapper no-gutters" style="height: 100%;">
 		<div class="col-4 swiper-slide" [ngClass] = "menuItems[0].class" style="height: 100%;">
 			<generator-form></generator-form>

@@ -62,7 +62,23 @@
 }
 
 .mt-panel-menu-item {
+	padding: 0;
 	height: 25px;
+	a{
+		display: block;
+		height: 15px;
+		line-height: 15px;
+		margin: 5px 0;
+		padding: 0 15px;
+		border-left: 1px solid #ddd;
+		color: @text-black;
+	}
+	&:first-of-type a{
+		border: none;
+	}
+	a.current{
+		text-decoration: underline @blue !important;
+	}
 }
 
 .mt-panel-menu-border {

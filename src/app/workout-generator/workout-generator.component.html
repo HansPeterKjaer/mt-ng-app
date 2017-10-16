@@ -1,19 +1,19 @@
 <div class="mt-panel-menu" style="z-index: 9999">
 	<div class="row">
 		<div class="mt-panel-menu-item col-4" [ngClass] = "menuItems[0].class">
-			<a (click)="mtPanelMenuItemClick($event,0)">Generator</a>
+			<a [ngClass] = "menuItems[0].class" (click)="mtPanelMenuItemClick($event,0)">Generator</a>
 		</div>
 		<div class="mt-panel-menu-item col-4" [hidden]="!workout" [ngClass] = "menuItems[1].class">
-			<a (click)="mtPanelMenuItemClick($event,1)">Workout</a>
+			<a [ngClass] = "menuItems[1].class" (click)="mtPanelMenuItemClick($event,1)">Workout</a>
 		</div>
 		<div class="mt-panel-menu-item col-4" [hidden]="!exercise" [ngClass] = "menuItems[2].class">
-			<a (click)="mtPanelMenuItemClick($event,2)">Exercise</a>
+			<a [ngClass] = "menuItems[2].class" (click)="mtPanelMenuItemClick($event,2)">Exercise</a>
 		</div>
 	</div>
 	<div class="mt-panel-menu-border">
 	</div>
 </div>
-<div #swiperWrapper class="mt-panel-wrapper container-fluid swiper-container" [(index)]="swiperIndex" swiper style="height: 100%;">
+<div #swiperWrapper class="mt-panel-wrapper container-fluid swiper-container" (indexChange)="onIndexChange($event)" [(index)]="swiperIndex"  swiper style="height: 100%;">
 	<div class="row mt-panel-slide-wrapper swiper-wrapper no-gutters" style="height: 100%;">
 		<div class="col-4 swiper-slide" [ngClass] = "menuItems[0].class" style="height: 100%;">
 			<generator-form></generator-form>

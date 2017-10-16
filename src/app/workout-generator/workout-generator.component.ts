@@ -36,17 +36,9 @@ export class WorkoutGeneratorComponent implements OnInit {
 		];
 	}
 
-	mtPanelMenuItemClick(event, index) {
-		this.swiperIndex = index;
+	mtPanelMenuItemClick(event, index: number) {
 		if (index == this.prevIndex) return;
 		this.swiperIndex = index;
-		this.menuItems[this.prevIndex].selected = false;
-		this.menuItems[this.prevIndex].class = '';
-		this.menuItems[index].selected = true;
-		this.menuItems[index].class = `current ${(this.prevIndex > index) ? 'next' : 'prev'}` ;
-		this.prevIndex = index; 
-		console.log(this.menuItems[index]);
-
   	}
 
 	ngOnInit() {
@@ -54,5 +46,14 @@ export class WorkoutGeneratorComponent implements OnInit {
 
 	ngAfterViewInit() {
     	
+  	}
+
+  	onIndexChange(index: number) {
+  		console.log(index);
+  		this.menuItems[this.prevIndex].selected = false;
+		this.menuItems[this.prevIndex].class = '';
+		this.menuItems[index].selected = true;
+		this.menuItems[index].class = `current ${(this.prevIndex > index) ? 'next' : 'prev'}` ;
+		this.prevIndex = index; 
   	}
 }

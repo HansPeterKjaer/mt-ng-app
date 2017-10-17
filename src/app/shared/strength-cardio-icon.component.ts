@@ -38,7 +38,7 @@ export class StrengthCardioIconComponent implements OnChanges {
 	@Input() size: String = 'strength-cardio-icon--sm';
 	@Input() diff: number = 3;
 
-	private animationDelay: string = `${ 0-((this.diff-1) * 0.1) }s`;
+	public animationDelay: string = `${ 0-((this.diff-1) * 0.1) }s`;
 
 	ngOnChanges(...args: any[]){
 		this.diff = args[0].diff.currentValue;

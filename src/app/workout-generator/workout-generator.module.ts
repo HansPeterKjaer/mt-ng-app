@@ -12,6 +12,7 @@ import { StateService } from './state.service';
 import { StrengthCardioIconComponent } from 'app/shared/strength-cardio-icon.component';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { ScrollSnapDirective } from './scroll-snap.directive';
 
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -32,7 +33,8 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
   	ExerciseComponent, 
   	ExerciseThumbnailComponent, 
   	GeneratorFormComponent,
-    StrengthCardioIconComponent
+    StrengthCardioIconComponent,
+    ScrollSnapDirective
   ],
   providers: [
   	WorkoutGeneratorService, 

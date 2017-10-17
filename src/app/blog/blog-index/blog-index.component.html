@@ -15,15 +15,23 @@
 </div>
 
 <div class="feature-zone row">
-	<h1 class="col-12" >Seneste Øvelser</h1>
-	<div class="col-xs-6 col-sm-4 col-md-3">
-		<exercise-thumbnail [exerciseId]=1 ></exercise-thumbnail>
-	</div>
-	<div class="col-xs-6 col-sm-4 col-md-3">
-		<exercise-thumbnail [exerciseId]=2 ></exercise-thumbnail>
-	</div>
-	<div class="col-xs-6 col-sm-4 col-md-3">
-		<exercise-thumbnail [exerciseId]=3 ></exercise-thumbnail>
+	<div class="col-12">
+	
+		<h1 class="h3" >Seneste Øvelser</h1>
+		<div class="row">
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<exercise-thumbnail [exerciseId]=1 ></exercise-thumbnail>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<exercise-thumbnail [exerciseId]=2 ></exercise-thumbnail>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-3">
+				<exercise-thumbnail [exerciseId]=3 ></exercise-thumbnail>
+			</div>
+		</div>
+		<div>
+			<a class="float-right" routerLink="/generator">Prøv workout generatoren</a>
+		</div>
 	</div>
 </div>
 

@@ -7,6 +7,7 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogPostTeaserComponent } from './blog-post/blog-post-teaser.component';
 
 import { ExerciseThumbnailComponent } from './exercise/exercise-thumbnail.component';
+import { ExerciseComponent } from './exercise/exercise.component';
 import { WorkoutSpotComponent } from './workout/workout-spot.component';
 import { WorkoutGeneratorService } from 'app/shared/workout-generator.service';
 import { AsideMenuComponent} from './aside-menu/aside-menu.component'
@@ -27,7 +28,8 @@ import { StickDirective } from './aside-menu/stick.directive';
     BlogPostTeaserComponent,
     ExerciseThumbnailComponent,
     WorkoutSpotComponent,
-    StickDirective
+    StickDirective,
+    ExerciseComponent
   ],
   providers: [
   	BlogService,

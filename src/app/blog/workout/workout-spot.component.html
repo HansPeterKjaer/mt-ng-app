@@ -1,13 +1,16 @@
 <div *ngIf="workout" class="feature-zone row">
-	<div class="col-xs-12" >
-		<h1>Seneste Workout: {{workout.protocol.name}}</h1>
-		<h2 class="margin-sm">Øvelser:</h2>
+	<div class="col-12" >
+		<h1 class="h3">Ugens Workout: {{workout.protocol.name}}</h1>
+		<h2 class="h4 margin-sm">Øvelser:</h2>
 		<div class="workout__exercises">
 			<div class="row small-gutters">
 				<div *ngFor="let ex of workout.exercises" (click)="selectExercise(ex)" class="col-xs-4 col-sm-3">
 					<exercise-thumbnail [exercise]="ex"></exercise-thumbnail>
 				</div>
 			</div>
+		</div>
+		<div>
+			<a class="float-right" routerLink="/generator/{{workout.id}}">Åbn workout</a>
 		</div>	
 	</div>
 </div>

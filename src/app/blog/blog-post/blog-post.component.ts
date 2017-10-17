@@ -11,7 +11,7 @@ import { BlogPost } from 'app/models/blog-post';
 })
 export class BlogPostComponent implements OnInit {
 	
-	private post: BlogPost;
+	public post: BlogPost;
 	
 	constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute) {
 		console.log(activatedRoute);

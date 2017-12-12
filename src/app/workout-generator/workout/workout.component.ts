@@ -17,7 +17,10 @@ export class WorkoutComponent implements OnInit {
   workout: Workout;
   
   constructor(private stateService: StateService, private workoutGeneratorService: WorkoutGeneratorService, private route: ActivatedRoute) { 
-    stateService.workout$.subscribe(wo => { this.workout = wo; });
+    stateService.workout$.subscribe(wo => { 
+      this.workout = wo; 
+      console.log(wo)
+    });
   }
 
   selectExercise(ex: Exercise): void {

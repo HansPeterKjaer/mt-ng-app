@@ -3,16 +3,17 @@
 	<div class="row flex-content">
 		<div class="col-12" >
 			<h1 class="sr-only">Din Workout <span class="hidden">{{workout.name}}</span></h1>
+			<!--h2 class="margin-sm">Øvelser:</h2-->
 			<h2 class="margin-sm">Program: {{workout.protocol.name}}</h2>
-			<div [innerHTML]="workout.protocol.descr" ></div>        
-			<h2 class="margin-sm">Øvelser:</h2>
 			<div class="workout__exercises">
 				<div class="row small-gutters">
 					<div *ngFor="let ex of workout.exercises" (click)="selectExercise(ex)" class="col-4 col-sm-3">
 						<exercise-thumbnail [exercise]="ex"></exercise-thumbnail>
 					</div>
 				</div>
-			</div>        
+			</div>
+			
+			<div [innerHTML]="workout.protocol.descr" ></div>        
 		</div>
 	</div>
 </div>

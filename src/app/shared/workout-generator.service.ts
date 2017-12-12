@@ -7,11 +7,12 @@ import { Workout } from 'app/models/workout';
 import { Exercise } from 'app/models/exercise';
 import { ExerciseImage } from 'app/models/exercise-image';
 import { Protocol } from 'app/models/protocol';
+import { environment } from 'environments/environment';
 //import { WORKOUT } from './mock-workout';
 
 @Injectable()
 export class WorkoutGeneratorService {
-	private apiUrl = '/api'; 
+	private apiUrl = environment.apiUrl; 
 	
 	constructor(private http: Http) { }
 

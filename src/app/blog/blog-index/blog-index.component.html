@@ -1,3 +1,9 @@
+<div [hidden]="posts" class="row">
+	<div class="col-12">
+		<div class="loading-spinner"></div>
+	</div>
+</div>		
+
 <div class="row">
 	<div *ngFor="let post of posts | slice:0:4; let index=index;" [ngClass]="{'col-lg-6': (!post.excerpt)}" class="col-12">
 		<blog-post-teaser [post]="post" ></blog-post-teaser>
@@ -5,7 +11,7 @@
 </div>
 
 
-<workout-spot [workoutId]=6 ></workout-spot>
+<workout-spot [hidden]="!posts" [workoutId]=6 ></workout-spot>
 
 
 <div class="row">
@@ -14,7 +20,7 @@
 	</div>
 </div>
 
-<div class="feature-zone row">
+<div [hidden]="!posts" class="feature-zone row">
 	<div class="col-12">
 	
 		<h1 class="h3" >Seneste Øvelser</h1>

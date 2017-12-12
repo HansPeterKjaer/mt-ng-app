@@ -25,9 +25,30 @@
 			.mt-topnav__link:hover, 
 			.mt-topnav__link:focus,
 			& .active > .mt-topnav__link {
-				//color: #ffffff;
-				//background-color: #080808;
+
 			}
 		}
 	}	
+}
+
+.mt-subnav-toggler {
+	@media(min-width: @screen-sm){margin-top: 4px;}
+	&:focus{
+    	outline: none
+    };
+}
+.mt-subnav {
+	position: absolute;
+	top: 41px;
+	@media(min-width: @screen-sm){top: 51px;}
+    right: 0;
+    text-align: right;
+    padding: 0px 15px;
+    z-index: 200000;
+    width: 100%;
+    left: 0;
+    background: @gray-lighter;
+}
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#007bff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }

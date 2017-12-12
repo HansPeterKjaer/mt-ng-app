@@ -13,7 +13,7 @@
 	<div class="mt-panel-menu-border">
 	</div>
 </div>
-<div #swiperWrapper class="mt-panel-wrapper container-fluid swiper-container" (indexChange)="onIndexChange($event)" [(index)]="swiperIndex"  swiper style="height: 100%;">
+<div #swiperWrapper class="mt-panel-wrapper container-fluid swiper-container" (indexChange)="onIndexChange($event)"  swiper style="height: 100%;">
 	<div class="row mt-panel-slide-wrapper swiper-wrapper no-gutters" style="height: 100%;">
 		<div class="col-4 swiper-slide" [ngClass] = "menuItems[0].class" style="height: 100%;">
 			<generator-form></generator-form>

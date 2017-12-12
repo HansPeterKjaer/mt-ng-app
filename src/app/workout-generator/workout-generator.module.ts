@@ -7,6 +7,8 @@ import { WorkoutComponent } from './workout/workout.component';
 import { ExerciseComponent } from './exercise/exercise.component';
 import { ExerciseThumbnailComponent } from './exercise/exercise-thumbnail.component';
 import { GeneratorFormComponent } from './generator-form/generator-form.component';
+import { TimerComponent} from './exercise/timer.component';
+import { MinuteSecondsPipe} from 'app/shared/minute-seconds.pipetransform';
 import { WorkoutGeneratorService } from 'app/shared/workout-generator.service';
 import { StateService } from './state.service';
 import { StrengthCardioIconComponent } from 'app/shared/strength-cardio-icon.component';
@@ -34,6 +36,8 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
   	ExerciseThumbnailComponent, 
   	GeneratorFormComponent,
     StrengthCardioIconComponent,
+    TimerComponent,
+    MinuteSecondsPipe,
     ScrollSnapDirective
   ],
   providers: [

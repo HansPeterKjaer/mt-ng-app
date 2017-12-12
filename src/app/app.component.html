@@ -1,26 +1,46 @@
 <div class="flex-main">
 	<nav class="mt-topbar">
-		<div class="">
-			<div class="mt-topbar__logo">
-				<a class="" href="#"><img src="/assets/mtlogo.svg" alt="My trainer" /></a>
-			</div>
-			<div class="mt-topnav">
-				<ul class="nav">
-					<li class="active" >
-						<a class="mt-topnav__link" routerLink="/generator" routerLinkActive="active">
-							Workout
-							<span class="d-none d-sm-inline"> Generator</span>
-							<!--span class="sr-only">(current)</span-->
-						</a>
-					</li>
-					<li>
-						<a class="mt-topnav__link" routerLink="/blog" routerLinkActive="active">
-							Blog
-							<!--span class="sr-only">(current)</span-->
-						</a>
-					</li>
-				</ul>
-			</div>
+		<div class="mt-topbar__logo">
+			<a class="" href="#"><img src="/assets/mtlogo.svg" alt="My trainer" /></a>
+		</div>
+		<div class="mt-topnav">
+			<ul class="nav">
+				<li class="active" >
+					<a class="mt-topnav__link" routerLink="/generator" routerLinkActive="active">
+						Workout
+						<span class="d-none d-sm-inline"> Generator</span>
+						<!--span class="sr-only">(current)</span-->
+					</a>
+				</li>
+				<li>
+					<a class="mt-topnav__link" routerLink="/blog" routerLinkActive="active">
+						Blog
+						<!--span class="sr-only">(current)</span-->
+					</a>
+				</li>
+			</ul>
+		</div>
+		<button (click)="subNavToggled = !subNavToggled" class="mt-subnav-toggler navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="mt-subnav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div [ngClass]="{'collapse' : !subNavToggled}" class="mt-subnav navbar-collapse" id="mt-subnav">
+		    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+			    <li id="" class="nav-item">
+					<a class="nav-link" (click)="subNavToggled = false" routerLink="/blog/page/kropsvaegtstraening" routerLinkActive="active">Intro til Workout Generatoren</a>
+				</li>
+				<li id="" class="nav-item">
+					<a class="nav-link" (click)="subNavToggled = false" routerLink="/blog/page/kropsvaegtstraening3" routerLinkActive="active">Kropsvægtstræning</a>
+				</li>
+				<li id="" class="nav-item">
+					<a class="nav-link" (click)="subNavToggled = false" routerLink="/blog/page/kropsvaegtstraening3" routerLinkActive="active">Undgå skader</a>
+				</li>
+				<li id="" class="nav-item">
+					<a class="nav-link" (click)="subNavToggled = false" routerLink="/blog/page/kom-igang" routerLinkActive="active">Vores Træningstips</a>
+				</li>
+				<li id="" class="nav-item">
+					<a class="nav-link" (click)="subNavToggled = false" routerLink="/blog/page/kom-igang3" routerLinkActive="active">Om Mytrainer</a>
+				</li>
+		    </ul>
 		</div>
 	</nav>
 	<div class="flex-content">

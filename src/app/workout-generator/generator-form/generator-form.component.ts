@@ -23,7 +23,10 @@ export class GeneratorFormComponent implements OnInit {
   warning: boolean = false;
 
   constructor(private router: Router, private stateService: StateService, private workoutGeneratorService: WorkoutGeneratorService, private route: ActivatedRoute) { 
-    stateService.workout$.subscribe(wo => { this.workout = (wo) ? wo : null; this.selectedFocus = (wo) ? wo.focus : this.selectedFocus; });
+    stateService.workout$.subscribe(wo => { 
+      this.workout = (wo) ? wo : null; 
+      this.selectedFocus = (wo) ? wo.focus : this.selectedFocus; 
+    });
   }
 
   onSubmit(form: NgForm) : void {

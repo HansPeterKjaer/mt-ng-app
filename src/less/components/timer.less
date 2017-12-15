@@ -1,0 +1,54 @@
+.timer{
+	position: relative;
+	padding: 10px;
+	.timer__progress {
+		width: 100%;
+		padding-top: 100%;
+		position: relative;
+	}
+	.timer__progress__count {
+		position: absolute;
+		width: 100%;
+		display: block;
+		text-align: center;
+		top: 50%;
+		margin-top: -10px;
+	}
+	.timer__progress__circle {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		transform: rotate(-90deg);
+		display: block;
+		top: 0px;
+		.c2 {
+			fill: transparent;
+			stroke: @blue;
+			stroke-width: 5px;
+			stroke-dasharray: 0 189;
+			animation: fillup 60s linear;
+			animation-play-state: paused;		
+		}
+		.c1 {
+			fill: transparent;
+			stroke: @grey;
+			stroke-width: 5px;			
+		}
+	}
+	.timer__button {
+		background-color: transparent;
+	    border: none;
+	    color: @text-black;
+	    padding: 10px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 4px 2px;
+	    border-radius: 50%;
+	}
+
+	@keyframes fillup {
+  		to { stroke-dasharray: 189 189; }
+	}
+}

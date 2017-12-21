@@ -24,9 +24,13 @@ export class ExerciseComponent implements OnInit {
 
 	initExercise(ex){
 		this.exercise = ex;
-		let index = this.workout.exercises.findIndex(elm => elm.id = ex.id);
-		this.nextExercise = (index+1 < this.workout.exercises.length) ? this.workout.exercises[index] : this.workout.exercises[0];
+		let index = this.workout.exercises.findIndex(elm => elm.id == ex.id);
+		this.nextExercise = (index+1 >= this.workout.exercises.length) ? this.workout.exercises[0] : this.workout.exercises[index+1];
 		this.currentIndex = 0;
+	}
+
+	selectExercise(ex: Exercise): void {
+	    this.stateService.addExercise(ex);
 	}
 
 	play(event) {

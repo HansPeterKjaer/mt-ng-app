@@ -39,7 +39,7 @@
 					</div>
 					<div class="col-4">
 						<timer></timer>
-						<exercise-thumbnail [exercise]="exercise"></exercise-thumbnail>
+						<exercise-thumbnail (click)="selectExercise(nextExercise)" [exercise]="nextExercise"></exercise-thumbnail>
 					</div>
 				</div>
 				<div class="row">

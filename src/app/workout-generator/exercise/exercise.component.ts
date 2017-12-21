@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 import { Exercise } from 'app/models/exercise';
 import { Workout } from 'app/models/workout';
 import { StateService } from 'app/workout-generator/state.service';
+import { TimerComponent }  from './timer.component';
 
 @Component({
 	selector: 'exercise',
@@ -10,6 +11,8 @@ import { StateService } from 'app/workout-generator/state.service';
 })
 
 export class ExerciseComponent implements OnInit {
+	@ViewChild(TimerComponent) private timerComponent: TimerComponent;
+
 	exercise: Exercise = null;
 	nextExercise: Exercise = null;
 	workout: Workout = null;
@@ -27,6 +30,7 @@ export class ExerciseComponent implements OnInit {
 		let index = this.workout.exercises.findIndex(elm => elm.id == ex.id);
 		this.nextExercise = (index+1 >= this.workout.exercises.length) ? this.workout.exercises[0] : this.workout.exercises[index+1];
 		this.currentIndex = 0;
+		if(this.timerComponent) this.timerComponent.reset();
 	}
 
 	selectExercise(ex: Exercise): void {

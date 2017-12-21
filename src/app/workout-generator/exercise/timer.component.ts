@@ -45,4 +45,9 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
     this.animationDelay = 0;
   }
+
+  reset(){
+    this.stop();
+    this.initialState = true;
+  }
 }

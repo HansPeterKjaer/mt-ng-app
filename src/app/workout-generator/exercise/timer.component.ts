@@ -22,11 +22,10 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  start(){
+  public start(){
     this.started = true;
     this.initialState = false;
-    if(this.subscription)
-      this.subscription.unsubscribe();  
+    this.unsubscribe();  
 
     this.subscription = this.timer.subscribe((t) => { 
         this.seconds++; 
@@ -34,19 +33,23 @@ export class TimerComponent implements OnInit, OnDestroy {
       });
   }
 
-  pause(){
+  public pause(){
     this.started = false;
-    this.subscription.unsubscribe();
+    this.unsubscribe();
   }
 
-  stop(){
+  public stop(){
     this.started = false;
     this.seconds = 0;
-    this.subscription.unsubscribe();
+    this.unsubscribe();
     this.animationDelay = 0;
   }
 
-  reset(){
+  private unsubscribe() {
+    if(this.subscription) this.subscription.unsubscribe();
+  }
+
+  public reset(){
     this.stop();
     this.initialState = true;
   }

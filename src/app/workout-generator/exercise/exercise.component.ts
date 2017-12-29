@@ -25,7 +25,7 @@ export class ExerciseComponent implements OnInit {
 		stateService.workout$.subscribe(wo => this.workout = wo);
 	}
 
-	initExercise(ex){
+	private initExercise(ex){
 		this.exercise = ex;
 		let index = this.workout.exercises.findIndex(elm => elm.id == ex.id);
 		this.nextExercise = (index+1 >= this.workout.exercises.length) ? this.workout.exercises[0] : this.workout.exercises[index+1];
@@ -43,7 +43,7 @@ export class ExerciseComponent implements OnInit {
 		}
 		else {
 			this.isPlaying = true;
-			this.exerciseTimer = setInterval(()=>this.next(null), 1000);
+			this.exerciseTimer = setInterval(() => this.currentIndex = this.nextIndex(), 1000);
 		}
 	}
 
@@ -59,7 +59,11 @@ export class ExerciseComponent implements OnInit {
 
 	next(event){
 		this.pause(null);
-		this.currentIndex = (this.currentIndex + 1 >= this.exercise.images.length) ? 0 : this.currentIndex + 1; 
+		this.currentIndex = this.nextIndex();
+	}
+
+	private nextIndex(): number{
+		return (this.currentIndex + 1 >= this.exercise.images.length) ? 0 : this.currentIndex + 1; 
 	}
 
 	prev(event){
@@ -68,6 +72,5 @@ export class ExerciseComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log(this.exercise);
 	}
 }

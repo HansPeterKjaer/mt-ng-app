@@ -21,6 +21,7 @@
 	position: fixed;
     width: 100%;
     padding: 0 15px;
+    background-color: #fff;
 
     @media (min-width: @screen-lg) { 
 		display: none;
@@ -35,7 +36,15 @@
   	scroll-snap-type: mandatory;
   	scroll-snap-destination: 100% 0%;
   	overflow-y: hidden !important;
+
+  	background: url('/mtassets/images/bg-sm.jpg');
+	background-size: cover;
 	
+	@media (min-width: @screen-md) { 
+		background: url('/mtassets/images/bg.jpg');
+		background-size: cover;
+	}
+
 	@media (min-width: @screen-lg) { 
 		padding: 0;
 	}
@@ -48,6 +57,7 @@
 	margin:0px !important;	
 	box-sizing: border-box !important;
 	
+	
 	@media (min-width: @screen-sm) {
 		width: 300%;
 	}
@@ -58,6 +68,10 @@
 
 	@media (min-width: @screen-lg) { 
 		width: 100%;
+	}
+
+	> .swiper-slide{
+		background-color: rgba(255,255,255,0.85);
 	}
 }
 

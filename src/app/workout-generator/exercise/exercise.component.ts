@@ -19,6 +19,7 @@ export class ExerciseComponent implements OnInit {
 	currentIndex: number = 0;
 	exerciseTimer;
 	isPlaying: boolean = false;
+	activeTab: number = 0;
 
 	constructor(private stateService: StateService) { 
 		stateService.exercise$.subscribe(ex => this.initExercise(ex));

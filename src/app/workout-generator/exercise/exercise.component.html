@@ -43,10 +43,20 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12">	
-						<div class="exercise__textwrapper">
-							<p>{{exercise.focus}} / {{exercise.diff}}</p>
+					<div class="col-12">
+						<ul class="hidden-sm-up nav nav-tabs">
+							<li class="nav-item">
+								<a (click)="activeTab = 0" [ngClass]="{'active': activeTab == 0}" class="nav-link" href="javascript:void(0)">Øvelsesbeskrivelse</a>
+							</li>
+							<li class="nav-item">
+								<a (click)="activeTab = 1" [ngClass]="{'active': activeTab == 1}" class="nav-link" href="javascript:void(0)">Program</a>
+							</li>
+						</ul>	
+						<div [ngClass]="{'d-none' : activeTab != 0}" class="exercise__textwrapper exercise__description">
 							<div class="exercise__description" [innerHTML]="exercise.description"></div>
+						</div>
+						<div [ngClass]="{'d-none' : activeTab != 1}" class="exercise__textwrapper hidden-sm-up exercise__workoutdescription">
+							<div [innerHTML]="workout.protocol.descr" ></div>  
 						</div>
 					</div>
 				</div>

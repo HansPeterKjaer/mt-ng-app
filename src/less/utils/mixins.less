@@ -2,3 +2,21 @@
     @url: `encodeURIComponent(@{svg})`;
     background-image: url("data:image/svg+xml;charset=utf-8,@{url}");
 }
+
+.custom-bullets(){
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		padding-left: 1rem;
+    	text-indent: -0.7rem;
+	}
+
+	li::before {
+		content: '\2022';
+		color: @text-black;
+		padding-right: 0.2rem;
+	}   
+}

@@ -67,8 +67,41 @@ export class WorkoutGeneratorService {
 			.catch(this.handleError);
 	}
 
+	getWorkoutList(): Promise<Workout> {
+		const url = `${this.apiUrl}/api/getAllWorkouts`;
+		return this.http.get(url)
+			.toPromise()
+			.then((response) => {
+			 	let d = response.json(); 
+
+				if (d.success){
+			 		return r.data.map((x) => { this.mapJsonToWorkout(x) });
+			 	}
+			 	else {
+			 		return null;
+			 	}
+			})
+			.catch(this.handleError);
+	}
+
+	getExerciseList(): Promise<Exercise> {
+		const url = `${this.apiUrl}/api/getExerciseList`;
+		return this.http.get(url)
+			.toPromise()
+			.then((response) => {
+			 	let r = response.json(); 
+
+				if (r.success){
+			 		return r.data.map((x) => { this.mapJsonToExercise(x) });
+			 	}
+			 	else {
+			 		return null;
+			 	}
+			})
+			.catch(this.handleError);
+	}
+
 	private handleError(error: any): Promise<any> {
-		//console.error('An error occurred', error); // for demo purposes only
 		return Promise.reject(error.message || error);
 	}
 

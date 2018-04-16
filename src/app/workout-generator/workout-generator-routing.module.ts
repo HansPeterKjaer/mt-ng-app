@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { WorkoutGeneratorComponent } from './workout-generator.component';
-//import { WorkoutComponent } from './workout/workout.component';
-//import { GeneratorFormComponent } from './generator-form.component';
 
 const workoutGeneratorRoutes: Routes = [
   {
